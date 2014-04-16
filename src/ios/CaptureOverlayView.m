@@ -11,9 +11,9 @@
 #define kTextMargin 10
 
 static const int MIN_FRAME_WIDTH = 240;
-static const int MIN_FRAME_HEIGHT = 240;
-static const int MAX_FRAME_WIDTH = 1200; // = 5/8 * 1920
-static const int MAX_FRAME_HEIGHT = 675; // = 5/8 * 1080
+static const int MIN_FRAME_HEIGHT = 100;
+static const int MAX_FRAME_WIDTH = 1800;
+static const int MAX_FRAME_HEIGHT = 400;
 
 @implementation CaptureOverlayView{
     CAShapeLayer *_outline;
@@ -102,7 +102,7 @@ static const int MAX_FRAME_HEIGHT = 675; // = 5/8 * 1080
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 -(int) findDesiredDimensionInRangeFor: (int) resolution min:(int) hardMin max: (int) hardMax {
-    int dim = 5 * resolution / 8; // Target 5/8 of each dimension
+    int dim = 7 * resolution / 8;
     if (dim < hardMin) {
         return hardMin;
     }
@@ -118,7 +118,7 @@ static const int MAX_FRAME_HEIGHT = 675; // = 5/8 * 1080
     CGSize screenResolution = self.bounds.size;
     
     int width = [self findDesiredDimensionInRangeFor:screenResolution.width min:MIN_FRAME_WIDTH max:MAX_FRAME_WIDTH];
-    int height = [self findDesiredDimensionInRangeFor:screenResolution.height min:MIN_FRAME_HEIGHT max:MAX_FRAME_HEIGHT];
+    int height = (int) (width * 0.15);
     
     int leftOffset = (screenResolution.width - width) / 2;
     int topOffset = (screenResolution.height - height) / 2;
