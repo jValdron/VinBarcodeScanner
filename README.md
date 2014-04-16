@@ -1,7 +1,7 @@
-BarcodeScanner
-==============
+VIN BarcodeScanner
+==================
 
-Cross-platform BarcodeScanner for Cordova / PhoneGap.
+Cross-platform VIN BarcodeScanner for Cordova / PhoneGap.
 
 Follows the [Cordova Plugin spec](http://docs.phonegap.com/en/3.0.0/plugin_ref_spec.md.html), so that it works with [Plugman](https://github.com/apache/cordova-plugman).
 
@@ -23,60 +23,7 @@ be included during installation.
 ## Using the plugin ##
 The plugin creates the object `plugins.barcodeScanner` with the method `scan(success, fail)`. 
 
-The following barcode types are currently supported:
-### Android
-
-* QR_CODE
-* DATA_MATRIX
-* UPC_E
-* UPC_A
-* EAN_8
-* EAN_13
-* CODE_128
-* CODE_39
-* CODE_93
-* CODABAR
-* ITF
-* RSS14
-* PDF417
-* RSS_EXPANDED
-
-### iOS
-
-* AZTEC
-* CODABAR
-* CODE_39
-* CODE_93
-* CODE_128
-* DATA_MATRIX
-* EAN_8
-* EAN_13
-* ITF
-* MAXICODE
-* PDF_417
-* QR_CODE
-* RSS_14
-* RSS_EXPANDED
-* UPC_A
-* UPC_E
-* UPC_EAN_EXTENSION
-
-### WP8
-
-* QR_CODE
-* DATA_MATRIX
-* UPC_E
-* UPC_A
-* EAN_8
-* EAN_13
-* CODE_128
-* CODE_39
-* CODE_93
-* CODABAR
-* ITF
-* RSS14
-* PDF417
-* MSI
+**Only CODE_39 barcode types will be scanned, as this is optimized for VINs!**
 
 ## Installing the plugin ##
 
